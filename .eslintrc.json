@@ -237,7 +237,7 @@
         "key-spacing": "warn",
         "keyword-spacing": "warn",
         "linebreak-style": [
-            "error",
+            "off",
             "unix"
         ],
         "max-nested-callbacks": [

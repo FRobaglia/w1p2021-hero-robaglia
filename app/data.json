@@ -1,0 +1,64 @@
+{
+  "phase_1": {
+    "title": "Bienvenue !",
+    "choices": {
+      "A": {
+        "action": "Avancer.",
+        "destination" : "/game/2"
+      }
+    }
+  },
+  "phase_2": {
+    "title": "Ou aller ?",
+    "choices": {
+      "A": {
+        "action": "A gauche.",
+        "destination": "/game/3"
+      },
+      "B": {
+        "action": "A droite.",
+        "destination": "/game/4"
+      }
+    }
+  },
+  "phase_3": {
+    "title": "Chemin Tranquille",
+    "choices": {
+      "A": {
+        "action": "Avancer.",
+        "destination": "/game/5"
+      }
+    }
+  },
+  "phase_4": {
+    "title": "Chemin Dangereux",
+    "choices": {
+      "A": {
+        "action": "Revenir.",
+        "destination": "/game/2"
+      },
+      "B": {
+        "action": "Avancer.",
+        "destination": "/game/6"
+      }
+    }
+  },
+  "phase_5": {
+    "title": "Arrivée",
+    "choices": {
+      "A": {
+        "action": "Continuer.",
+        "destination": "/win"
+      }
+    }
+  },
+  "phase_6": {
+    "title": "Piège Mortel",
+    "choices": {
+      "A": {
+        "action": "Continuer.",
+        "destination": "/lose"
+      }
+    }
+  }
+}
