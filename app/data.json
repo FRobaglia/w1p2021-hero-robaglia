@@ -1,23 +1,24 @@
 {
   "phase_1": {
+    "id": 1,
     "title": "Bienvenue !",
     "choices": {
       "A": {
         "action": "Avancer.",
-        "destination" : "/game/2"
+        "path" : "/game/2"
       }
     }
   },
   "phase_2": {
-    "title": "Ou aller ?",
+    "title": "Où aller ?",
     "choices": {
       "A": {
         "action": "A gauche.",
-        "destination": "/game/3"
+        "path": "/game/3"
       },
       "B": {
         "action": "A droite.",
-        "destination": "/game/4"
+        "path": "/game/4"
       }
     }
   },
@@ -26,7 +27,7 @@
     "choices": {
       "A": {
         "action": "Avancer.",
-        "destination": "/game/5"
+        "path": "/game/5"
       }
     }
   },
@@ -35,11 +36,11 @@
     "choices": {
       "A": {
         "action": "Revenir.",
-        "destination": "/game/2"
+        "path": "/game/2"
       },
       "B": {
         "action": "Avancer.",
-        "destination": "/game/6"
+        "path": "/game/6"
       }
     }
   },
@@ -48,7 +49,7 @@
     "choices": {
       "A": {
         "action": "Continuer.",
-        "destination": "/win"
+        "path": "/win"
       }
     }
   },
@@ -57,7 +58,7 @@
     "choices": {
       "A": {
         "action": "Continuer.",
-        "destination": "/lose"
+        "path": "/lose"
       }
     }
   }
