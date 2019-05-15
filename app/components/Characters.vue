@@ -1,10 +1,10 @@
 <template>
   <div class="big-header">
-    <h1>{{ message }}</h1>
+    <h1> Je suis un...</h1>
     <br>
 
     <div class="characters">
-    <Character v-for="character in characters" v-bind:character="character" :key="character.name">
+    <Character v-on:click.native="saveCharacter(character)" v-for="character in characters" v-bind:character="character" :key="character.name">
     </Character>
     </div>
 
@@ -15,13 +15,21 @@
 <script>
 import Character from "./Character.vue";
 import game from '../datatwo.json'
+import gameService from '../services/gameService';
 
 export default {
   data() {
     return {
-      message: "Je suis un ...",
       characters: game.characters
     };
+  },
+  methods: {
+    saveCharacter(character) {
+      gameService.stats = character.stats;
+      gameService.save();
+
+      this.$router.push({path: '/game/1'})
+    }
   },
   components: {
     Character

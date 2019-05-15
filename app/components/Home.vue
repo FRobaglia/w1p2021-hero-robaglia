@@ -15,7 +15,7 @@
 export default {
   data() {
     return {
-      message: "Lors d'une nuit de pleine lune, alors que vous sortiez pour acheter de puissants équipements, un homme étrange vous accoste au détour d'une ruelle sombre... Il vous propose une quête : Depuis peu, des habitants sont retrouvés morts aux alentour du village, et personne n'en connaît les raisons... Trouver la menace, et éradiquez là !",
+      message: "Lors d'une nuit de pleine lune, alors que vous sortiez pour acheter de puissants équipements, un homme étrange vous approche au détour d'une ruelle sombre... Il vous propose une quête : Depuis peu, des habitants sont retrouvés morts aux alentours du village, et personne n'en connaît les raisons... Trouver la menace, et éradiquez là !",
     };
   }
 };

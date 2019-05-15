@@ -1,5 +1,5 @@
 <template>
-  <router-link
+  <article
     class="character"
     to="/game/1">
     
@@ -9,16 +9,17 @@
         <h3>Chance : {{ character.stats.luck }}</h3>
         <h3>Puissance : {{ character.stats.power }}</h3>
         <h3>Rapidité : {{ character.stats.speed }}</h3>
-        <h3>Armure : {{ character.stats.defense }}</h3>
+        <h3>Armure : {{ character.stats.armor }}</h3>
       </div>
       <p> {{ character.description }}</p>
     </div>
-  </router-link>
+  </article>
 </template>
 
 
 <style scoped>
 p {
+  padding: 5px;
   font-style: italic;
   margin-top: 45px;
 }
@@ -35,8 +36,9 @@ h3 {
 }
 
 .character {
+  cursor: pointer;
   background-color: white;
-  filter: brightness(65%);
+  filter: brightness(75%);
   background-position: cover;
   background-size: cover;
   background-repeat: no-repeat;
@@ -47,7 +49,7 @@ h3 {
   align-items: center;
   width: 200px;
   margin: 20px;
-  padding: 20px;
+  padding: 25px;
   color: black;
 }
 

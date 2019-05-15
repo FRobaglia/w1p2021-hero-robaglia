@@ -6,8 +6,7 @@
       "actions": [
         {
           "description": "C'est parti !",
-          "path": 2,
-          "money": 10
+          "path": 2
         }
       ]
     },
@@ -29,13 +28,13 @@
   "characters": [
     {
       "class": "Magicien",
-      "description": "“ L'atout principal du magicien réside dans sa puissance très élevée. En revanche, ses autres statistiques sont assez faibles. ”",
+      "description": "“ L'atout principal du magicien réside dans sa puissance exceptionnelle. En revanche, ses autres statistiques sont assez faibles. ”",
       "background": "background-image: url(../assets/img/wizard.jpg)",
       "stats": {
         "luck": 3,
         "power": 11,
         "speed": 4,
-        "defense": 2
+        "armor": 2
       }
     },
     {
@@ -46,18 +45,18 @@
         "luck": 3,
         "power": 7,
         "speed": 1,
-        "defense": 9
+        "armor": 9
       }
     },
     {
       "class": "Voleur",
-      "description": "“ Le voleur évite au maximum les combats, il préfère ruser pour arriver à ses fins. ”",
+      "description": "“ Le voleur évite les combats quand il le peut : il préfère ruser pour arriver à ses fins... ”",
       "background": "background-image: url(../assets/img/rogue.jpg)",
       "stats": {
         "luck": 6,
         "power": 3,
         "speed": 8,
-        "defense": 3
+        "armor": 3
       }
     }
   ]

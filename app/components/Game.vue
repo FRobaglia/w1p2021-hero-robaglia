@@ -1,16 +1,6 @@
 <template>
   <div class="big-header">
-  <div class="user-state"> 
-    <h2 class="golds"> 0 </h2>
-    <h2 class="health"> 100/100 </h2>
-  </div>
-  
-  <div class="user-stats"> 
-    <h2> Chance : <span> 12 </span></h2>
-    <h2> Puissance : <span> 5 </span></h2>
-    <h2> Vitesse : <span> 3 </span></h2>
-    <h2> Armure : <span> 6 </span></h2>
-  </div>
+    <Menu v-bind:gameService="gameService" > </Menu>
     <h1> {{ step.title }} </h1>
     <br />
     <div class="choices">
@@ -24,10 +14,15 @@
 <script>
 
 import game from '../datatwo.json'; 
+import Menu from './Menu.vue';
+import gameService from '../services/gameService.js'
+
+gameService.save()
 
 export default {
   data() {
     return {
+      gameService: gameService,
       step: this.getStep()
     };
   },
@@ -52,6 +47,9 @@ export default {
     '$route' (to, from) {
       this.step = this.getStep()
     }
+  },
+  components: {
+    Menu
   }
 };
 
