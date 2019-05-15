@@ -1,18 +1,18 @@
 @import 'reset';
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
-$hetic-green: #0de595;
+$main-color: #222;
 
 body,
 button,
 input,
 select,
 textarea {
-  font-family: 'Roboto';
+  font-family: 'PT Sans';
 }
 
 .big-header {
-  background-color: $hetic-green;
+  background-color: $main-color;
   height: 100vh;
 
   display: flex;
@@ -22,14 +22,69 @@ textarea {
   flex-direction: column;
 
   color: white;
+
+  & h1 {
+    font-size: 18px;
+    line-height: 130%;
+    max-width: 60%;
+    text-align: justify;
+  }
 }
 
 .button {
-  color: $hetic-green;
+  margin: 15px;
+  cursor: pointer;
+  color: $main-color;
   text-decoration: none;
   background: white;
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
   display: inline-block;
   border: none;
+}
+
+
+.characters {
+  display: flex;
+}
+
+.choices {
+  display: flex;
+}
+
+.user-state {
+  font-size: 16px;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+
+  .golds::before, .health::before {
+    content: "";
+    margin-top: 12px;
+    margin-right: 6px;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-position: cover;
+    background-size: cover;
+  }
+
+  .golds::before {
+    background-image: url(../img/coins.png);
+  }
+  .health::before {
+    background-image: url(../img/hp.png);
+  }
+}
+
+.user-stats {
+  position: absolute;
+  text-align: right;
+  top: 16px;
+  right: 16px;
+  line-height: 120%;
+
+  span {
+    font-weight: bold;
+  }
 }

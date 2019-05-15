@@ -1,0 +1,64 @@
+{
+  "steps": [
+    {
+      "id": 1,
+      "title": "Bienvenue voyageur!",
+      "actions": [
+        {
+          "description": "C'est parti !",
+          "path": 2,
+          "money": 10
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "2 chemins s'offrent à vous. Lequel choisir ?",
+      "actions": [
+        {
+          "description": "Chemin tranquille",
+          "path": "win"
+        },
+        {
+          "description": "Chemin dangereux",
+          "path": "lose"
+        }
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "class": "Magicien",
+      "description": "“ L'atout principal du magicien réside dans sa puissance très élevée. En revanche, ses autres statistiques sont assez faibles. ”",
+      "background": "background-image: url(../assets/img/wizard.jpg)",
+      "stats": {
+        "luck": 3,
+        "power": 11,
+        "speed": 4,
+        "defense": 2
+      }
+    },
+    {
+      "class": "Guerrier",
+      "description": "“ Le guerrier est très fort au combat grâce à sa force et son armure élevée, mais est extrêmement lent. ”",
+      "background": "background-image: url(../assets/img/warrior.jpg)",
+      "stats": {
+        "luck": 3,
+        "power": 7,
+        "speed": 1,
+        "defense": 9
+      }
+    },
+    {
+      "class": "Voleur",
+      "description": "“ Le voleur évite au maximum les combats, il préfère ruser pour arriver à ses fins. ”",
+      "background": "background-image: url(../assets/img/rogue.jpg)",
+      "stats": {
+        "luck": 6,
+        "power": 3,
+        "speed": 8,
+        "defense": 3
+      }
+    }
+  ]
+}
