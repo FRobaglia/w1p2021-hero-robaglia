@@ -6,10 +6,10 @@
     <div class="black">
       <h2>{{ character.class }}</h2>
       <div class="stats">
-        <h3>Chance : {{ character.stats.luck }}</h3>
-        <h3>Puissance : {{ character.stats.power }}</h3>
-        <h3>Rapidité : {{ character.stats.speed }}</h3>
-        <h3>Armure : {{ character.stats.armor }}</h3>
+        <h3>Chance : {{ character.stats.luck }} </h3>
+        <h3>Puissance : {{ character.stats.power }} </h3>
+        <h3>Agilité : {{ character.stats.agility }} </h3>
+        <h3>Points de vie : {{ character.stats.health }} </h3>
       </div>
       <p> {{ character.description }}</p>
     </div>

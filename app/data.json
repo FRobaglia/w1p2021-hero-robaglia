@@ -1,64 +1,109 @@
 {
-  "phase_1": {
-    "title": "Bienvenue !",
-    "choices": {
-      "A": {
-        "action": "Avancer.",
-        "path" : "/game/2"
+  "steps": [
+    {
+      "id": 1,
+      "title": "Votre aventure commence donc ici. Pour découvrir la raison de ces terribles disparitions, il faudrait enquêter au plus vite. Cependant, vous vous apprêtiez à aller a la boutique pour acheter des équipements qui pourraient vous aider pour votre quête...",
+      "actions": [
+        {
+          "description": "Aller à la boutique d'équipements",
+          "path": 2
+        },
+        {
+          "description": "Enquêter, le temps presse !",
+          "path": 5
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Alors que vous arrivez à la boutique, vous remarquez quelque chose de louche: les vitrines sont vides ! Le marchand, dépité, vous raconte que 3 brigands sont arrivés peu avant vous et ont dévalisé le magasin, et ont tout voler sauf un mystérieux anneau magique. Le marchand vous dit qu'il vaut plus de 1 000 pièces d'or, mais qu'il est prêt à vous le vendre pour 200 pièces d'or si vous l'aidez à retrouver les brigands.",
+      "actions": [
+        {
+          "description": "Accepter l'offre du marchand",
+          "path": 3,
+          "newState": {
+            "gold": -200,
+            "luck": 5
+          }
+        },
+        {
+          "description": "Refuser l'offre du marchand",
+          "path": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Le marchand vous remercie et vous promets des pièces d'or si vous retrouvez les brigands ! De plus, dès lors que vous mettez l'anneau à votre doigt, vous vous sentez plus chanceux qu'avant... Vous avez maintenant 2 quêtes à résoudre, il est temps d'enquêter!",
+      "actions": [
+        {
+          "description": "Aller enquêter",
+          "path": 5
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Le marchand vous jette un regard triste et desespéré. Le pauvre homme a 4 enfants à nourrir et n'a désormais plus de boutique,n'avez-vous donc aucun coeur ? Quoi qu'il en soit, il est temps d'enquêter sur votre quête principale : trouver la cause des morts inexpliquées de villageois.",
+      "actions": [
+        {
+          "description": "Aller enquêter",
+          "path": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Alors que vous arpentez les rues à la recherche d'indices, vous apercevez 3 brigands en train d'agresser une villageoise sans défense dans une petite rue déserte. Ils sont armés, mais n'ont pas l'air très futés.",
+      "actions": [ 
+        {
+          "description": "Courir vers les brigands et les attaquer",
+          "path": 6
+        },
+        {
+          "description": "Approcher discrètement sans vous faire remarquer",
+          "path": 7
+        },
+        {
+          "description": "Les ignorer et continuer votre route",
+          "path": 8
+        }
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "class": "Mage",
+      "description": "“ L'atout principal du magicien réside dans sa puissance exceptionnelle. En revanche, ses autres statistiques sont assez faibles. ”",
+      "background": "background-image: url(../assets/img/wizard.jpg)",
+      "stats": {
+        "luck": 3,
+        "power": 16,
+        "agility": 4,
+        "health": 50
+      }
+    },
+    {
+      "class": "Guerrier",
+      "description": "“ Le guerrier est très fort au combat grâce à sa puissance et ses points de vie élevés, mais il est peu agile. ”",
+      "background": "background-image: url(../assets/img/warrior.jpg)",
+      "stats": {
+        "luck": 4,
+        "power": 9,
+        "agility": 1,
+        "health": 150
+      }
+    },
+    {
+      "class": "Voleur",
+      "description": "“ Le voleur évite les combats quand il le peut : il préfère ruser et se faufiler pour arriver à ses fins... ”",
+      "background": "background-image: url(../assets/img/rogue.jpg)",
+      "stats": {
+        "luck": 9,
+        "power": 2,
+        "agility": 8,
+        "health": 80
       }
     }
-  },
-  "phase_2": {
-    "title": "Où aller ?",
-    "choices": {
-      "A": {
-        "action": "A gauche.",
-        "path": "/game/3"
-      },
-      "B": {
-        "action": "A droite.",
-        "path": "/game/4"
-      }
-    }
-  },
-  "phase_3": {
-    "title": "Chemin Tranquille",
-    "choices": {
-      "A": {
-        "action": "Avancer.",
-        "path": "/game/5"
-      }
-    }
-  },
-  "phase_4": {
-    "title": "Chemin Dangereux",
-    "choices": {
-      "A": {
-        "action": "Revenir.",
-        "path": "/game/2"
-      },
-      "B": {
-        "action": "Avancer.",
-        "path": "/game/6"
-      }
-    }
-  },
-  "phase_5": {
-    "title": "Arrivée",
-    "choices": {
-      "A": {
-        "action": "Continuer.",
-        "path": "/win"
-      }
-    }
-  },
-  "phase_6": {
-    "title": "Piège Mortel",
-    "choices": {
-      "A": {
-        "action": "Continuer.",
-        "path": "/lose"
-      }
-    }
-  }
+  ]
 }

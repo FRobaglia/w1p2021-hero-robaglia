@@ -14,7 +14,7 @@
 
 <script>
 import Character from "./Character.vue";
-import game from '../datatwo.json'
+import game from '../data.json'
 import gameService from '../services/gameService';
 
 export default {
@@ -26,6 +26,7 @@ export default {
   methods: {
     saveCharacter(character) {
       gameService.stats = character.stats;
+      gameService.maxHealth = character.stats.health;
       gameService.save();
 
       this.$router.push({path: '/game/1'})

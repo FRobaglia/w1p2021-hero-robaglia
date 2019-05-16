@@ -1,14 +1,15 @@
 @import 'reset';
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
-
+@font-face {
+  font-family: "Dreamwood";
+  src: url("../fonts/Dreamwood.ttf") format("truetype");
+}
 
 $main-color: #222;
 
-@keyframes colo {
-  100% {
-    filter: hue-rotate(10deg)
-  }
+body {
+  overflow: hidden;
 }
 
 body,
@@ -33,7 +34,7 @@ textarea {
 
   & h1 {
     font-size: 18px;
-    line-height: 130%;
+    line-height: 150%;
     max-width: 60%;
     text-align: justify;
   }
@@ -50,8 +51,11 @@ textarea {
   display: inline-block;
   border: none;
 
-  &:hover {
-    animation: colo 3s linear infinite;
+  &.green {
+    background-color: green;
+  }
+  &.red {
+    background-color: red;
   }
 }
 
@@ -67,6 +71,7 @@ textarea {
   left: 16px;
 
   .golds::before, .health::before {
+    transform: translateY(4px);
     content: "";
     margin-top: 12px;
     margin-right: 6px;

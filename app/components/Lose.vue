@@ -1,17 +1,31 @@
 <template>
   <div class="big-header">
-    <h1>{{ message }}</h1>
+    <strong class="lost"> Vous avez perdu. </strong>
+    <h1> {{ lossCause }} </h1> 
     <br />
-    <router-link class="button" to="/">Retourner au début</router-link>
+    <router-link v-on:click.native="gameService.resetData()" class="button" to="/">Rejouer</router-link>
   </div>
 </template>
 
+<style>
+
+.lost {
+  color: red;
+  font-size: 60px;
+  padding-bottom: 35px;
+}
+
+</style>
 <script>
+
+import gameService from '../services/gameService.js'
+
 export default {
   data() {
     return {
-      message: "Vous avez perdu.",
-    };
-  }
+      gameService: gameService,
+      lossCause: "En refusant la quête, vous avez condamné tous les habitants du village à une mort certaine."
+    }
+  },
 };
 </script>

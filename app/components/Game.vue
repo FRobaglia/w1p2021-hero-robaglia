@@ -13,7 +13,7 @@
 
 <script>
 
-import game from '../datatwo.json'; 
+import game from '../data.json'; 
 import Menu from './Menu.vue';
 import gameService from '../services/gameService.js'
 
@@ -31,6 +31,15 @@ export default {
       return game.steps.find(step => step.id === parseInt(this.$route.params.id))
     },
     doEffects(action) {
+
+      if (action.newState) {
+        gameService.updateStats(action.newState);
+
+        if (action.newState.gold) {
+        gameService.gold = parseInt(gameService.gold) + action.newState.gold;
+        }
+        gameService.save();
+      }
 
       if (action.path === "win") {
         this.$router.push({path: '/win'})

@@ -1,17 +1,46 @@
+/* eslint-disable radix */
 class GameService {
   constructor() {
-    this.health = localStorage.getItem('health') || 100;
+    this.maxHealth = localStorage.getItem('maxHealth') || 999;
     this.gold = localStorage.getItem('gold') || 500;
     this.stats = JSON.parse(localStorage.getItem('stats')) || {
-      'luck': 999,
-      'power': 999,
-      'speed': 999,
-      'armor': 999
+      'luck': 0,
+      'power': 0,
+      'agility': 0,
+      'health': 0
     };
   }
 
+  updateStats(newState) {
+    if (newState.luck) {
+      this.stats.luck += newState.luck;
+    }
+    if (newState.power) {
+      this.stats.power += newState.power;
+    }
+    if (newState.agility) {
+      this.stats.agility += newState.agility;
+    }
+    if (newState.health) {
+      this.stats.health += newState.health;
+    }
+    this.save();
+  }
+
+  resetData() {
+    this.maxHealth = 999;
+    this.gold = 500;
+    this.stats = {
+      'luck': 0,
+      'power': 0,
+      'agility': 0,
+      'health': 0
+    };
+    this.save();
+  }
+
   save() {
-    localStorage.setItem('health', this.health);
+    localStorage.setItem('maxHealth', this.maxHealth);
     localStorage.setItem('gold', this.gold);
     localStorage.setItem('stats', JSON.stringify(this.stats));
   }
