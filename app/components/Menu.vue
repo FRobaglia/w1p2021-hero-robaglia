@@ -2,7 +2,7 @@
  <div class="menu-wrapper">  
    <div class="menu">
   <div class="user-state"> 
-    <h2 class="golds"> {{ gameService.gold }} </h2>
+    <h2 class="golds gold"> {{ gameService.gold }} </h2>
     <h2 class="health"> {{ gameService.stats.health }} / {{ gameService.maxHealth }}</h2>
   </div>
   
@@ -31,16 +31,6 @@
     width: 22px;
     background-position: cover;
     background-size: cover;
-  }
-
-  .luck {
-    color: #27ae60;
-  }
-  .power {
-    color: #e74c3c;
-  }
-  .speed {
-    color: #D2B48C;
   }
 
   .luck::before {

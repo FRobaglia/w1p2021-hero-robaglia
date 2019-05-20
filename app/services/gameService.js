@@ -11,22 +11,6 @@ class GameService {
     };
   }
 
-  updateStats(newState) {
-    if (newState.luck) {
-      this.stats.luck += newState.luck;
-    }
-    if (newState.power) {
-      this.stats.power += newState.power;
-    }
-    if (newState.agility) {
-      this.stats.agility += newState.agility;
-    }
-    if (newState.health) {
-      this.stats.health += newState.health;
-    }
-    this.save();
-  }
-
   resetData() {
     this.maxHealth = 999;
     this.gold = 500;

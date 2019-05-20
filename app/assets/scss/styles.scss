@@ -102,3 +102,29 @@ textarea {
     margin-left: 5px;
   }
 }
+
+.stat-change {
+  margin-top: 25px;
+  font-weight: bold;
+  text-align: center;
+
+  & div {
+    margin-top: 10px;
+  }
+}
+
+.luck {
+  color: #27ae60;
+}
+.power {
+  color: orange;
+}
+.health {
+  color: #e74c3c;
+}
+.speed {
+  color: #D2B48C;
+}
+.gold {
+  color: yellow;
+}

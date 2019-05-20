@@ -2,7 +2,7 @@
   "steps": [
     {
       "id": 1,
-      "title": "Votre aventure commence donc ici. Pour découvrir la raison de ces terribles disparitions, il faudrait enquêter au plus vite. Cependant, vous vous apprêtiez à aller a la boutique pour acheter des équipements qui pourraient vous aider pour votre quête...",
+      "title": "Votre aventure épique commence ici. Pour découvrir la raison de ces terribles disparitions, il faudrait commencer à enquêter au plus vite. Cependant, vous vous apprêtiez à aller a la boutique pour acheter des équipements qui pourraient peut-être vous aider pour votre quête...",
       "actions": [
         {
           "description": "Aller à la boutique d'équipements",
