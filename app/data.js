@@ -1,7 +1,7 @@
+/* eslint-disable max-len */
 /* eslint-disable quotes */
 
 const jpg = require('./assets/img/*.jpg');
-const png = require('./assets/img/*.png');
 
 export default {
   "steps": [

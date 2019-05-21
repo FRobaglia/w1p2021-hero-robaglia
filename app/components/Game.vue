@@ -90,7 +90,9 @@ export default {
 
           if (action.newState.agilityTry) {
             if (action.newState.agilityTry > gameService.stats.agility) {
-              this.$router.push({path: '/lose'})
+              this.$router.push({path: '/lose'});
+              gameService.currentID = null;
+              gameService.save();
               gameService.lossCause = "Pensez à faire des choix cohérents avec vos statistiques, vous manquiez d'agilité pour effectuer cette action sans vous exposer à une mort certaine."
             }
           }
@@ -139,12 +141,16 @@ export default {
           if (action.lossCause) {
             gameService.lossCause = action.lossCause;
             this.$router.push({path: '/lose'})
+            gameService.currentID = null;
+            gameService.save();
           }
     }
   },
   watch: {
     '$route' (to, from) {
       this.step = this.getStep();
+      gameService.currentID = this.step.id;
+      gameService.save();
     }
   },
   components: {

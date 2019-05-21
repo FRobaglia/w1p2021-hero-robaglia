@@ -145,14 +145,15 @@ textarea {
   color: $main-color;
   text-decoration: none;
   background: white;
-  padding: 8px;
+  padding: 12px;
   border-radius: 5px;
   display: inline-block;
   border: none;
 
   .tooltip {
-    transition: opacity 0.3s;
+    transition: opacity 0.75s;
     opacity: 0;
+    visibility: hidden;
     width: 120px;
     background-color: #eee;
     color: #333;
@@ -172,6 +173,7 @@ textarea {
   }
 
   &:hover .tooltip {
+    visibility: visible;
     opacity: 1;
   }
   
