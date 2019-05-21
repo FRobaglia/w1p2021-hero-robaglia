@@ -14,7 +14,7 @@
 
 <script>
 import Character from "./Character.vue";
-import game from '../data.json'
+import game from '../data.js'
 import gameService from '../services/gameService';
 
 export default {
@@ -25,11 +25,12 @@ export default {
   },
   methods: {
     saveCharacter(character) {
+
+      this.$router.push({path: '/game/1'})
+      
       gameService.stats = character.stats;
       gameService.maxHealth = character.stats.health;
       gameService.save();
-
-      this.$router.push({path: '/game/1'})
     }
   },
   components: {

@@ -8,6 +8,10 @@
 
 $main-color: #222;
 
+html, body {
+  background-color: black;
+}
+
 body {
   overflow: hidden;
 }
@@ -21,6 +25,8 @@ textarea {
 }
 
 .big-header {
+  transition: opacity 0.7s;
+  opacity: 1;
   background-color: $main-color;
   height: 100vh;
 
@@ -38,24 +44,9 @@ textarea {
     max-width: 60%;
     text-align: justify;
   }
-}
 
-.button {
-  margin: 15px;
-  cursor: pointer;
-  color: $main-color;
-  text-decoration: none;
-  background: white;
-  padding: 8px;
-  border-radius: 5px;
-  display: inline-block;
-  border: none;
-
-  &.green {
-    background-color: green;
-  }
-  &.red {
-    background-color: red;
+  &.fade {
+    opacity: 0;
   }
 }
 
@@ -133,6 +124,7 @@ textarea {
   background-position: cover;
   background-size: cover;
 }
+
 .Voleur {
   background-image: url(../img/rogue.jpg);
 }
@@ -144,3 +136,58 @@ textarea {
 .Mage {
   background-image: url(../img/wizard.jpg);
 }
+
+.button {
+  transition: transform 0.2s;
+  position: relative;
+  margin: 15px;
+  cursor: pointer;
+  color: $main-color;
+  text-decoration: none;
+  background: white;
+  padding: 8px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+
+  .tooltip {
+    transition: opacity 0.3s;
+    opacity: 0;
+    width: 120px;
+    background-color: #eee;
+    color: #333;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    width: 180px;
+    top: 130%;
+    left: 50%; 
+    padding: 5px;
+    margin-left: -90px;
+  }
+
+  &:hover {
+    transform: scale(0.96);
+  }
+
+  &:hover .tooltip {
+    opacity: 1;
+  }
+  
+}
+
+
+
+.pow {
+  background-color: orange;
+}
+
+.lck {
+  background-color: #27ae60;
+}
+
+.agi {
+  background-color: #D2B48C;
+}
+

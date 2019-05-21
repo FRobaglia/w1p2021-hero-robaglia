@@ -40,8 +40,6 @@ h3 {
   cursor: pointer;
   font-weight: bold;
   filter: brightness(55%);
-  background-position: cover;
-  background-size: cover;
   background-repeat: no-repeat;
   transition: filter 0.2s, transform 0.2s;
   text-decoration: none;
@@ -62,8 +60,6 @@ h3 {
 
 <script>
 
-
-import imgs from '../assets/imgs'
 export default {
   props: ["character"],
 };
