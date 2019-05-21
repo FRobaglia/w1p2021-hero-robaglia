@@ -4,7 +4,7 @@
     <br>
 
     <div class="characters">
-    <Character v-on:click.native="saveCharacter(character)" v-for="character in characters" v-bind:character="character" :key="character.name">
+    <Character v-on:click.native="saveCharacter(character)" :class="character.class" v-for="character in characters" v-bind:character="character" :key="character.name">
     </Character>
     </div>
 

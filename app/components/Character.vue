@@ -3,6 +3,7 @@
     class="character"
     to="/game/1">
     
+    
     <div class="black">
       <h2>{{ character.class }}</h2>
       <div class="stats">
@@ -37,8 +38,8 @@ h3 {
 
 .character {
   cursor: pointer;
-  background-color: white;
-  filter: brightness(75%);
+  font-weight: bold;
+  filter: brightness(55%);
   background-position: cover;
   background-size: cover;
   background-repeat: no-repeat;
@@ -50,7 +51,7 @@ h3 {
   width: 200px;
   margin: 20px;
   padding: 25px;
-  color: black;
+  color: white;
 }
 
 .character:hover {
@@ -60,7 +61,10 @@ h3 {
 </style>
 
 <script>
+
+
+import imgs from '../assets/imgs'
 export default {
-  props: ["character"]
+  props: ["character"],
 };
 </script>

@@ -128,3 +128,19 @@ textarea {
 .gold {
   color: yellow;
 }
+
+.Voleur, .Guerrier, .Mage {
+  background-position: cover;
+  background-size: cover;
+}
+.Voleur {
+  background-image: url(../img/rogue.jpg);
+}
+
+.Guerrier {
+  background-image: url(../img/warrior.jpg);
+}
+
+.Mage {
+  background-image: url(../img/wizard.jpg);
+}

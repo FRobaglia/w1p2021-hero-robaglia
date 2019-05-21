@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       gameService: gameService,
-      lossCause: "En refusant la quête, vous avez condamné tous les habitants du village à une mort certaine."
+      lossCause: gameService.lossCause
     }
   },
 };

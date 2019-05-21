@@ -33,6 +33,7 @@ export default {
       return game.steps.find(step => step.id === parseInt(this.$route.params.id))
     },
     doEffects(action) {
+      console.log(this.$router.push)
 
       if (action.path) {
         if (action.path === "win") {
@@ -40,6 +41,7 @@ export default {
         } else if (action.path === "lose") {
           this.$router.push({path: '/lose'})
         }
+
         this.$router.push({params: {id: action.path}})
         this.statChange = document.querySelector(".stat-change");
         this.statChange.innerHTML = null;
@@ -68,11 +70,22 @@ export default {
           }
         }
         if (action.newState.health) {
-          gameService.stats.health += action.newState.health;
-          this.statChange.innerHTML += `<div class="health">${action.newState.health} Points de vie </div>`
+          gameService.stats.health += action.newState.health + gameService.stats.power;
+          this.statChange.innerHTML += `<div class="health">${action.newState.health + gameService.stats.power} Points de vie </div>`
            if (action.newState.health > 0) {
             document.querySelector('.stat-change .health').insertAdjacentHTML('afterbegin', "+")
           }
+        }
+
+        if (action.newState.agilityTry) {
+          if (action.newState.agilityTry > gameService.stats.agility) {
+            this.$router.push({path: '/lose'})
+            gameService.lossCause = "Pensez à faire des choix cohérents avec vos statistiques, vous manquiez d'agilité pour effectuer cette action sans vous exposer à une mort certaine."
+          }
+        }
+
+        if (action.newState.merchant) {
+          gameService.merchant = true;
         }
 
         if (action.newState.gold) {
@@ -85,6 +98,33 @@ export default {
         gameService.save();
       }
 
+        if (action.goMerchant) {
+          if (gameService.merchant) {
+            gameService.stats.agility += 5;
+            gameService.save();
+            this.$router.push({params: {id: "15"}})
+            this.statChange.innerHTML = `<div class="speed"> +5 Agilité </div>`
+          }
+        }
+
+        if (action.bet) {
+          let didPlayerWin = Math.random() >= 0.5;
+          if (didPlayerWin) {
+            gameService.gold = parseInt(gameService.gold) + 50;
+            gameService.save();
+            this.statChange.innerHTML = `La pièce est tombée sur pile ! <div class="gold"> +50 Pièces d'or </div>`
+          } else {
+            gameService.gold = parseInt(gameService.gold) - 50;
+            gameService.save();
+            this.statChange.innerHTML = `Face, vous perdez ! <div class="gold"> -50 Pièces d'or </div>`
+          }
+          this.$router.push({params: {id: "13"}})
+        }
+
+        if (action.lossCause) {
+          gameService.lossCause = action.lossCause;
+          this.$router.push({path: '/lose'})
+        }
 
     }
   },

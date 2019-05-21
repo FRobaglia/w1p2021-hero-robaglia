@@ -10,7 +10,7 @@
 export default {
   data() {
     return {
-      message: "Vous avez gagné.",
+      message: "Vous avez sauvé le village, bravo !",
     };
   }
 };
