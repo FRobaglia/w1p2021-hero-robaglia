@@ -7,6 +7,7 @@ export default {
   "steps": [
     {
       "id": 1,
+      "background": jpg.village,
       "title": "Votre aventure épique commence ici. Pour découvrir la raison de ces terribles disparitions, il faudrait commencer à enquêter au plus vite. Cependant, vous vous apprêtiez à aller a la boutique pour acheter des équipements qui pourraient peut-être vous aider pour votre quête...",
       "actions": [
         {
@@ -21,6 +22,7 @@ export default {
     },
     {
       "id": 2,
+      "background": jpg.marchandarme,
       "title": "Alors que vous arrivez à la boutique, vous remarquez quelque chose de louche: les vitrines sont vides ! Le marchand, dépité, vous raconte que 3 brigands sont arrivés peu avant vous et ont dévalisé le magasin, et ont tout voler sauf un mystérieux anneau magique. Le marchand vous dit qu'il vaut plus de 1 000 pièces d'or, mais qu'il est prêt à vous le vendre pour 200 pièces d'or si vous l'aidez à retrouver les brigands.",
       "actions": [
         {
@@ -40,6 +42,7 @@ export default {
     },
     {
       "id": 3,
+      "background": jpg.marchandarme,
       "title": "Le marchand vous remercie et vous promets une surprise si vous retrouvez les brigands ! De plus, dès lors que vous mettez l'anneau à votre doigt, vous sentez votre chance augmenter... Vous avez maintenant 2 quêtes à résoudre, il est temps d'enquêter!",
       "actions": [
         {
@@ -50,6 +53,7 @@ export default {
     },
     {
       "id": 4,
+      "background": jpg.marchandarme,
       "title": "Le marchand vous jette un regard triste et desespéré. Le pauvre homme a 4 enfants à nourrir et n'a désormais plus de boutique,n'avez-vous donc aucun coeur ? Quoi qu'il en soit, il est temps d'enquêter sur votre quête principale : trouver la cause des morts inexpliquées de villageois.",
       "actions": [
         {
@@ -60,6 +64,7 @@ export default {
     },
     {
       "id": 5,
+      "background": jpg.village,
       "title": "Alors que vous arpentez les rues à la recherche d'indices, vous apercevez 3 brigands en train d'agresser une villageoise sans défense dans une petite rue déserte. Ils sont armés, mais n'ont pas l'air très futés.",
       "actions": [
         {
@@ -90,6 +95,7 @@ export default {
     },
     {
       "id": 6,
+      "background": jpg.village,
       "title": "Après un combat acharné, vous parvenez à vaincre les brigands, mais votre santé en a pris un coup. La villageoise, terrifiée mais soulagée, vous remercie. Pour vous remercier de l'avoir défendu, elle vous tend une petite bourse remplie de pièces d'or. Il est temps de continuer l'aventure !",
       "actions": [
         {
@@ -101,6 +107,7 @@ export default {
     },
     {
       "id": 7,
+      "background": jpg.village,
       "title": "Grâce à votre agilité, vous parvenez à approcher les bandits sans vous faire remarquer... Alors que vous êtes dans leur dos, vous les éliminer 1 à 1 sans qu'ils aient le temps de réagir. La villageoise, terrifiée mais soulagée, vous remercie. Pour vous remercier de l'avoir défendu, elle vous tend une petite bourse remplie de pièces d'or. Il est temps de continuer l'aventure !",
       "actions": [
         {
@@ -112,6 +119,7 @@ export default {
     },
     {
       "id": 9,
+      "background": jpg.village,
       "title": "Il est donc enfin temps d'enquêter sur votre quête. Pour trouver des indices sur la menace pesant sur le village, deux endroits peuvent être intéressants : l'auberge ou la taverne du village.",
       "actions": [
         {
@@ -126,6 +134,7 @@ export default {
     },
     {
       "id": 10,
+      "background": jpg.Taverne,
       "title": "Alors que vous entrez dans la taverne, deux choses vous intriguent : un homme assis seul dans un coin de la taverne, et un groupe d'aventuriers assis à une grande table, qui sont étrangement silencieux.",
       "actions": [
         {
@@ -154,6 +163,7 @@ export default {
     },
     {
       "id": 12,
+      "background": jpg.Taverne,
       "title": "Vous vous approchez de l'homme seul, et lui demandez si il sait quelque chose à propos des morts inexpliquées de villageois autour du village. Il vous répond qu'il n'en sait rien, mais vous propose de parier avec lui. Pour 50 pièces d'or, l'homme lance une pièce. Si elle tombe sur pile, vous doublez votre mise, mais si elle tombe sur face, vous perdez vos 50 pièces d'or. Seulement l'homme semble louche, en conséquence la pièce est peut être truquée... Parier avec l'homme ?",
       "actions": [
         {
@@ -171,6 +181,7 @@ export default {
     },
     {
       "id": 13,
+      "background": jpg.Taverne,
       "title": "L'homme lance la pièce, elle atteint quasiment le plafond de la taverne, puis retombe sur la table en bois, et...",
       "actions": [
         {
@@ -188,6 +199,7 @@ export default {
     },
     {
       "id": 14,
+      "background": jpg.Taverne,
       "title": "Il est temps de vous recentrer sur votre quête, vous n'avez toujours aucun indice... Peut-être que le groupe d'aventuriers étrangement silencieux assis à l'autre bout de la taverne sauraient vous aider...",
       "actions": [
         {
@@ -202,6 +214,7 @@ export default {
     },
     {
       "id": 15,
+      "background": jpg.village,
       "title": "Alors que vous vous apprêtez à continuer votre aventure, vous réalisez que les 3 brigands que vous avez éliminés étaient surement les même qui avaient dévalisé la boutique du pauvre marchand, et vous vous rappelez qu'il vous avait promis une surprise si vous les retrouviez. Vous décidez donc de faire un détour par sa boutique. Vous pouvez lire le soulagement dans son visage quand vous lui annoncer que vous l'avez vengé. Il vous donne une paire de bottes pour vous remercier. Lorsque vous les enfilez, vous vous sentez plus agile.",
       "actions": [
         {
@@ -214,7 +227,6 @@ export default {
   "characters": [
     {
       "class": "Mage",
-      "background": jpg.wizard,
       "description": "“ L'atout principal du magicien réside dans sa puissance exceptionnelle. En revanche, ses autres statistiques sont assez faibles. ”",
       "stats": {
         "luck": 3,
@@ -225,7 +237,6 @@ export default {
     },
     {
       "class": "Guerrier",
-      "background": jpg.warrior,
       "description": "“ Le guerrier est très fort au combat grâce à sa puissance et ses points de vie élevés, mais il est peu agile. ”",
       "stats": {
         "luck": 4,
@@ -236,7 +247,6 @@ export default {
     },
     {
       "class": "Voleur",
-      "background": jpg.rogue,
       "description": "“ Le voleur évite les combats quand il le peut : il préfère ruser et se faufiler pour arriver à ses fins... ”",
       "stats": {
         "luck": 9,

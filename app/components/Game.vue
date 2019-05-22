@@ -10,6 +10,7 @@
       <div > {{ action.description }}  </div>
     </div>
     </div>
+    <div class="game-background" :style="customBackground"> </div>
   </div>
 </template>
 
@@ -27,11 +28,14 @@ export default {
       css: "big-header",
       statChange: document.querySelector(".stat-change"),
       gameService: gameService,
-      step: this.getStep()
+      step: this.getStep(),
+      customBackground: `background-image: url("${this.getStep().background}")`
     };
   },
   mounted() {
-    console.log(document.querySelector('.big-header'))
+    const url = require("../assets/sounds/maintheme.mp3")
+    const mainTheme = new Audio(url)
+    mainTheme.play()
   },
   methods: {
     getStep() {
@@ -47,12 +51,6 @@ export default {
       this.css = "big-header";
 
         if (action.path) {
-          if (action.path === "win") {
-          this.$router.push({path: '/win'})
-          } else if (action.path === "lose") {
-            this.$router.push({path: '/lose'})
-          }
-
           this.$router.push({params: {id: action.path}})
           this.statChange = document.querySelector(".stat-change");
           this.statChange.innerHTML = null;
@@ -149,6 +147,7 @@ export default {
   watch: {
     '$route' (to, from) {
       this.step = this.getStep();
+      this.customBackground = `background-image: url("${this.step.background}")`
       gameService.currentID = this.step.id;
       gameService.save();
     }
