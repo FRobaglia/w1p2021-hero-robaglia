@@ -33,5 +33,5 @@ URL du site : http://herobaglia.netlify.com
 | Sauvegarde | Lorsqu'on recharge la page (`Ctrl + R`), le personnage, ses caractéristiques, les choix du joueur et tout le reste sont rétablis | Oui |
 | Sauvegarde | Lorsqu'on quitte le jeu et qu'on revient plus tard à la page d'accueil (sur le même navigateur), il est possible de reprendre l'aventure où on l'avait laissée | Oui |
 | Multimédia | L'expérience présente une vidéo ou plus | A faire |
-| Multimédia | L'expérience présente un audio ou plus | A faire |
-| Multimédia | L'utilisateur a la possibilité de couper le son à tout moment | A faire |
+| Multimédia | L'expérience présente un audio ou plus | Oui |
+| Multimédia | L'utilisateur a la possibilité de couper le son à tout moment | Oui |
