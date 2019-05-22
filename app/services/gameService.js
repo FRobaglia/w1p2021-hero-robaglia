@@ -1,7 +1,8 @@
 /* eslint-disable radix */
 class GameService {
   constructor() {
-    this.currentID = localStorage.getItem('currentID') || null;
+    this.playSounds = JSON.parse(localStorage.getItem('playSounds')) || true;
+    this.currentID = JSON.parse(localStorage.getItem('currentID')) || null;
     this.merchant = JSON.parse(localStorage.getItem('didMerchant')) || false;
     this.lossCause = 'En refusant la quête, vous condamnez tous les habitants du village à une mort certaine.';
     this.maxHealth = localStorage.getItem('maxHealth') || 999;
@@ -28,6 +29,7 @@ class GameService {
   }
 
   save() {
+    localStorage.setItem('playSounds', this.playSounds);
     localStorage.setItem('maxHealth', this.maxHealth);
     localStorage.setItem('currentID', this.currentID);
     localStorage.setItem('gold', this.gold);

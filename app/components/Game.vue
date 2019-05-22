@@ -11,6 +11,7 @@
     </div>
     </div>
     <div class="game-background" :style="customBackground"> </div>
+    <div class="soundManager"></div>
   </div>
 </template>
 
@@ -35,7 +36,22 @@ export default {
   mounted() {
     const url = require("../assets/sounds/maintheme.mp3")
     const mainTheme = new Audio(url)
+
+    const soundOn = require("../assets/img/on.svg")
+    const soundOff = require("../assets/img/off.svg")
     mainTheme.play()
+
+    document.querySelector('.soundManager').addEventListener('click', function() {
+      gameService.playSounds = !gameService.playSounds;
+      gameService.save();
+      if (!gameService.playSounds) {
+        document.querySelector('.soundManager').style.backgroundImage = `url('${soundOff}')`;
+        mainTheme.pause()
+      } else {
+        document.querySelector('.soundManager').style.backgroundImage = `url('${soundOn}')`;
+        mainTheme.play()
+      }
+    })
   },
   methods: {
     getStep() {

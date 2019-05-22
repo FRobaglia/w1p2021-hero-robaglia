@@ -197,7 +197,24 @@ textarea {
   background-size: cover;
 }
 
+.soundManager {
+  transition: transform 0.3s;
+  cursor: pointer;
+  filter: invert(100%);
+  background-image: url("../img/on.svg");
+  background-position: cover;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 5;
 
+  &:hover {
+    transform: scale(1.1);
+  }
+}
 
 .pow {
   background-color: orange;
