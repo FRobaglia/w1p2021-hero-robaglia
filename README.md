@@ -26,7 +26,7 @@ URL du site : http://herobaglia.netlify.com
 | Routing | Lorsqu'on recharge la page (`Ctrl + R`), on se trouve toujours à la même étape | Oui |
 | Transitions | Chaque page apparaît grâce à une transition fluide (la complexité de la transition n'est pas prise en compte ici) | Oui |
 | Transitions | Les transitions internes au jeu (d'une étape à une autre) et externes (intro, fin...) sont différentes | A faire |
-| État | Le choix du personnage et/ou de ses caractéristiques impacte l'aventure au moins une fois. **Indiquez ici comment succintement.** | Oui, les statistiques du personnage sont prises en comptes dans de nombreux choix durant l'aventure, et l'issue change en fonction des statistiques |
+| État | Le choix du personnage et/ou de ses caractéristiques impacte l'aventure au moins une fois. **Indiquez ici comment succintement.** | Oui, les statistiques du personnage sont prises en comptes dans de nombreux choix durant l'aventure, par exemple lors d'un jeu il faut trouver si une pièce tombera sur pile ou face, la statistique "chance" impacte le résultat |
 | État | Une décision ou un événement aléatoire survenu pendant l'aventure a un impact sur la suite, au moins une fois. **Indiquez ici comment succintement.** | Oui, par exemple si on choisit d'aider le marchand au début du jeu, plus tard dans le jeu il nous récompensera si on trouve les bandits qui l'ont volé. |
 | État | Le choix du personnage et/ou ce qu'il s'est passé pendant l'aventure impactent l'écran de fin. **Indiquez ici comment succintement.** | Oui, l'écran d'échec indique la raison de pourquoi l'utilisateur a perdu, par exemple car il n'avait pas assez d'agilité pour mener à bien l'action. |
 | État | Au moins un service (classe de type `GameService`) est utilisé | Oui |
