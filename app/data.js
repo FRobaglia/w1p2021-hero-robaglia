@@ -441,7 +441,8 @@ export default {
       "actions": [
         {
           "description": "Tuer la créature.",
-          "tooltip": "Boum !"
+          "tooltip": "Boum !",
+          "win": true
         },
         {
           "description": "La réveiller, et lui proposer de s'allier à elle.",
