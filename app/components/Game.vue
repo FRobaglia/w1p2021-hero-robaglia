@@ -176,9 +176,12 @@ export default {
         if (!gameService.tp) {
           alert("Vous n'avez pas de pierre de téléportation, cette action est impossible.")
         } else {
-          let playerSurvived = Math.random() + gameService.stats.luck / 100 >= 0.08;
+          let playerSurvived = Math.random() + gameService.stats.luck / 100 >= 0.2;
           if (playerSurvived) {
             this.$router.push({ params: { id: "27" } });
+          } else {
+            gameService.lossCause = "Oups, pas de chance, la téléportation a raté..."
+            this.$router.push({ path: "/lose" });
           }
         }
       }
@@ -225,13 +228,28 @@ export default {
         }
       }
 
-      if (action.has)
+      if (action.hasPotion) {
+        gameService.hasPotion = true;
+        gameService.save();
+      }
+
+      if (action.potion) {
+        if (gameService.hasPotion) {
+          this.$router.push({ params: { id: "31" } });
+        } else {
+          alert("Vous n'avez pas de potion...")
+        }
+      }
 
       if (action.lossCause) {
         gameService.lossCause = action.lossCause;
         this.$router.push({ path: "/lose" });
         gameService.currentID = null;
         gameService.save();
+      }
+
+      if (action.win) {
+        this.$router.push({ path: "/win" });
       }
 
       gameService.save();

@@ -1,6 +1,7 @@
 /* eslint-disable radix */
 class GameService {
   constructor() {
+    this.hasPotion = JSON.parse(localStorage.getItem('hasPotion')) || false;
     this.tp = JSON.parse(localStorage.getItem('tp')) || false;
     this.playSounds = JSON.parse(localStorage.getItem('playSounds')) || true;
     this.currentID = JSON.parse(localStorage.getItem('currentID')) || null;
@@ -17,6 +18,7 @@ class GameService {
   }
 
   resetData() {
+    this.hasPotion = false;
     this.tp = false;
     this.lossCause = 'En refusant la quête, vous condamnez tous les habitants du village à une mort certaine.';
     this.currentID = null;
@@ -33,6 +35,7 @@ class GameService {
   }
 
   save() {
+    localStorage.setItem('hasPotion', this.hasPotion);
     localStorage.setItem('tp', this.tp);
     localStorage.setItem('playSounds', this.playSounds);
     localStorage.setItem('maxHealth', this.maxHealth);

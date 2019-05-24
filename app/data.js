@@ -370,10 +370,10 @@ export default {
     {
       "id": 24,
       "background": jpg.auberge,
-      "title": "Le marchand vous remercie et vous préviens d'une chose : lors de l'utilisation d'une pierre de téléportation, il y a une petite chance, inférieure à 10%, que son utilisateur meurt instantanément.. Mais si vous êtes chanceux, ça devrait bien se passer, ne vous inquiétez pas!",
+      "title": "Le marchand vous remercie et vous préviens d'une chose : lors de l'utilisation d'une pierre de téléportation, il y a une petite chance, environ 20%, que son utilisateur meurt instantanément.. Mais si vous êtes chanceux, ça devrait bien se passer, ne vous inquiétez pas!",
       "actions": [
         {
-          "description": "Super... Continuer son chemin.",
+          "description": "Pas très rassurant... Continuer son chemin.",
           "path": 25,
         },
       ]
@@ -410,6 +410,10 @@ export default {
           "hallway": true,
           "tooltip": "Ce choix prends en compte votre agilité.",
           "type": "agi",
+        },
+        {
+          "potion": true,
+          "description": "Lancer la potion de la sorcière.",
         }
       ]
     },
@@ -423,6 +427,10 @@ export default {
           "hallway": true,
           "tooltip": "Ce choix prends en compte votre agilité.",
           "type": "agi",
+        },
+        {
+          "potion": true,
+          "description": "Lancer la potion de la sorcière.",
         }
       ]
     },
@@ -437,7 +445,7 @@ export default {
         },
         {
           "description": "La réveiller, et lui proposer de s'allier à elle.",
-          "tooltip": ". . .",
+          "tooltip": "???",
           "lossCause": "... La créature ne semblait pas ouverte au dialogue.",
         }
       ]
@@ -455,10 +463,6 @@ export default {
           "newState": {
             "health": -67
           }
-        },
-        {
-          "potion": true,
-          "description": "Lancer la potion de la sorcière.",
         }
       ]
     },
@@ -470,6 +474,7 @@ export default {
         {
           "description": "Youpi!",
           "tooltip": "Ecran de fin.",
+          "win": true
         },
       ]
     },
@@ -481,6 +486,7 @@ export default {
         {
           "description": "Youpi!",
           "tooltip": "Ecran de fin.",
+          "win": true
         },
       ]
     },
@@ -491,9 +497,9 @@ export default {
       "description": "“ L'atout principal du magicien réside dans sa puissance exceptionnelle. En revanche, ses autres statistiques sont assez faibles. ”",
       "stats": {
         "luck": 5,
-        "power": 27,
-        "agility": 5,
-        "health": 80
+        "power": 20,
+        "agility": 4,
+        "health": 85
       }
     },
     {
@@ -501,7 +507,7 @@ export default {
       "description": "“ Le guerrier est très fort au combat grâce à sa puissance et ses points de vie élevés, mais il est peu agile. ”",
       "stats": {
         "luck": 4,
-        "power": 9,
+        "power": 10,
         "agility": 2,
         "health": 150
       }
@@ -510,9 +516,9 @@ export default {
       "class": "Voleur",
       "description": "“ Le voleur évite les combats quand il le peut : il préfère ruser et se faufiler pour arriver à ses fins... ”",
       "stats": {
-        "luck": 11,
-        "power": 6,
-        "agility": 13,
+        "luck": 9,
+        "power": 4,
+        "agility": 8,
         "health": 100
       }
     }
