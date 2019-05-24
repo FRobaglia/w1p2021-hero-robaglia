@@ -37,4 +37,4 @@ URL du site : http://herobaglia.netlify.com
 | Multimédia | L'utilisateur a la possibilité de couper le son à tout moment | Oui |
 
 
-![alt text](https://raw.githubusercontent.com/FRobaglia/projectname/branch/path/to/img.png)
+![alt text](https://github.com/FRobaglia/w1p2021-hero-robaglia/blob/master/app/assets/img/parcoursHero.png)
