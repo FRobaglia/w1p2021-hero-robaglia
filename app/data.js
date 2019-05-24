@@ -355,7 +355,6 @@ export default {
       "actions": [
         {
           "description": "Acheter la pierre et continuer son chemin.",
-          "path": 24,
           "tp": true,
           "newState": {
             "gold": -100,

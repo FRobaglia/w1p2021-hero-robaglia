@@ -83,7 +83,6 @@ export default {
         this.$router.push({ params: { id: action.path } });
       }
 
-
       if (action.newState) {
         if (action.newState.luck) {
           gameService.stats.luck += action.newState.luck;
@@ -110,7 +109,9 @@ export default {
         }
         if (action.newState.agility) {
           gameService.stats.agility += action.newState.agility;
-          this.statChange.innerHTML += `<div class="speed">${action.newState.agility} Agilité </div>`;
+          this.statChange.innerHTML += `<div class="speed">${
+            action.newState.agility
+          } Agilité </div>`;
           if (action.newState.agility > 0) {
             document
               .querySelector(".stat-change .speed")
@@ -119,13 +120,14 @@ export default {
         }
         if (action.newState.health) {
           let hpLost = action.newState.health + gameService.stats.power * 2;
-          gameService.stats.health += hpLost
+          gameService.stats.health += hpLost;
           this.statChange.innerHTML += `<div class="health">${hpLost} Points de vie </div>`;
 
           if (gameService.stats.health <= 0) {
             this.$router.push({ path: "/lose" });
-            gameService.lossCause = `Vous avez perdu ${hpLost} points de vie contre cet adversaire, vous ne faisiez clairement pas le poids. Vous agonisez dans d'atroces souffrances.`
+            gameService.lossCause = `Vous avez perdu ${hpLost} points de vie contre cet adversaire, vous ne faisiez clairement pas le poids. Vous agonisez dans d'atroces souffrances.`;
             gameService.save();
+            x;
           }
           if (action.newState.health > 0) {
             document
@@ -146,15 +148,21 @@ export default {
             gameService.lossCause =
               "Pensez à faire des choix cohérents avec vos statistiques, vous manquiez d'agilité pour effectuer cette action sans vous exposer à une mort certaine.";
           }
-          
-          
         }
 
         if (action.newState.gold) {
+
           if (gameService.gold + action.newState.gold < 0) {
             alert("Vous n'avez pas assez d'or.");
             return;
           }
+          
+          if (action.tp) {
+            gameService.tp = true;
+            this.$router.push({ params: { id: "24" } });
+            gameService.save();
+          }
+
           gameService.gold = parseInt(gameService.gold) + action.newState.gold;
           this.statChange.innerHTML += `<div class="gold">${
             action.newState.gold
@@ -167,20 +175,19 @@ export default {
         }
       }
 
-      if (action.tp) {
-        gameService.tp = true;
-        gameService.save();
-      }
-
       if (action.canTp) {
         if (!gameService.tp) {
-          alert("Vous n'avez pas de pierre de téléportation, cette action est impossible.")
+          alert(
+            "Vous n'avez pas de pierre de téléportation, cette action est impossible."
+          );
         } else {
-          let playerSurvived = Math.random() + gameService.stats.luck / 100 >= 0.2;
+          let playerSurvived =
+            Math.random() + gameService.stats.luck / 100 >= 0.2;
           if (playerSurvived) {
             this.$router.push({ params: { id: "27" } });
           } else {
-            gameService.lossCause = "Oups, pas de chance, la téléportation a raté..."
+            gameService.lossCause =
+              "Oups, pas de chance, la téléportation a raté...";
             this.$router.push({ path: "/lose" });
           }
         }
@@ -210,7 +217,6 @@ export default {
         this.statChange.innerHTML += `<div class="health"> +${hpWon} Points de vie </div>`;
       }
 
-
       if (action.goMerchant) {
         if (gameService.merchant) {
           gameService.stats.agility += 5;
@@ -237,7 +243,7 @@ export default {
         if (gameService.hasPotion) {
           this.$router.push({ params: { id: "31" } });
         } else {
-          alert("Vous n'avez pas de potion...")
+          alert("Vous n'avez pas de potion...");
         }
       }
 
