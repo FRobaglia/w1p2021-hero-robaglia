@@ -1,7 +1,8 @@
 <template>
   <div class="big-header">
     <strong class="won"> Vous avez gagné ! </strong>
-    <h1>{{ message }}</h1>
+    <img style="width: 40%" src="../assets/img/allmight.gif">
+    <h1 style="margin-top: 30px">{{ message }}</h1>
     <br />
     <router-link v-on:click.native="gameService.resetData()" class="button" to="./home">Rejouer</router-link>
   </div>
