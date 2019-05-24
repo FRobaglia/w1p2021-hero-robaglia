@@ -171,7 +171,7 @@ textarea {
     top: 130%;
     left: 50%; 
     padding: 5px;
-    margin-left: -90px;
+    margin-left: -94px;
   }
 
   &:hover {
@@ -186,7 +186,7 @@ textarea {
 }
 
 .game-background {
-  filter: brightness(60%);
+  filter: brightness(50%);
   position: absolute;
   z-index: -1;
   top: 0;
@@ -215,6 +215,7 @@ textarea {
     transform: scale(1.1);
   }
 }
+
 
 .pow {
   background-color: orange;

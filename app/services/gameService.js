@@ -5,8 +5,8 @@ class GameService {
     this.currentID = JSON.parse(localStorage.getItem('currentID')) || null;
     this.merchant = JSON.parse(localStorage.getItem('didMerchant')) || false;
     this.lossCause = 'En refusant la quête, vous condamnez tous les habitants du village à une mort certaine.';
-    this.maxHealth = localStorage.getItem('maxHealth') || 999;
-    this.gold = localStorage.getItem('gold') || 500;
+    this.maxHealth = parseInt(localStorage.getItem('maxHealth')) || 999;
+    this.gold = parseInt(localStorage.getItem('gold')) || 500;
     this.stats = JSON.parse(localStorage.getItem('stats')) || {
       'luck': 0,
       'power': 0,

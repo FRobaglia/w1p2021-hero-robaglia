@@ -118,6 +118,17 @@ export default {
       ]
     },
     {
+      "id": 8,
+      "background": jpg.village,
+      "title": "Alors que vous vous apprêtez à continuer votre aventure, vous réalisez que les 3 brigands que vous avez éliminés étaient surement les même qui avaient dévalisé la boutique du pauvre marchand, et vous vous rappelez qu'il vous avait promis une surprise si vous les retrouviez. Vous décidez donc de faire un détour par sa boutique. Vous pouvez lire le soulagement dans son visage quand vous lui annoncer que vous l'avez vengé. Il vous donne une paire de bottes pour vous remercier. Lorsque vous les enfilez, vous vous sentez plus agile.",
+      "actions": [
+        {
+          "description": "Super ! Continuer.",
+          "path": 9
+        }
+      ]
+    },
+    {
       "id": 9,
       "background": jpg.village,
       "title": "Il est donc enfin temps d'enquêter sur votre quête. Pour trouver des indices sur la menace pesant sur le village, deux endroits peuvent être intéressants : l'auberge ou la taverne du village.",
@@ -143,21 +154,27 @@ export default {
         },
         {
           "description": "Aller voir le groupe d'aventuriers",
-          "path": 16
+          "path": 15
         }
       ]
     },
     {
       "id": 11,
-      "title": "Auberge",
+      "background": jpg.auberge,
+      "title": "Vous arrivez à l'auberge, qui est presque vide. Deux choix s'offrent à vous, vous payer une nuit à l'auberge pour guérir de vos blessures, ou bien trouver de nouveaux indices. Justement, le tenancier de l'auberge en sait peut être quelque chose...",
       "actions": [
         {
-          "description": "",
-          "path": 20
+          "description": "Passer la nuit",
+          "path": 19,
+          "tooltip": "Coûte 100 pièces d'or. Restaure tous vos points de vie.",
+          "newState": {
+            "gold": -100
+          },
+          "auberge": true,
         },
         {
-          "description": "",
-          "path": 21
+          "description": "Interroger l'homme",
+          "path": 20
         }
       ]
     },
@@ -204,7 +221,7 @@ export default {
       "actions": [
         {
           "description": "Aller les voir",
-          "path": 16
+          "path": 15
         },
         {
           "description": "Ne pas y aller",
@@ -214,15 +231,99 @@ export default {
     },
     {
       "id": 15,
-      "background": jpg.village,
-      "title": "Alors que vous vous apprêtez à continuer votre aventure, vous réalisez que les 3 brigands que vous avez éliminés étaient surement les même qui avaient dévalisé la boutique du pauvre marchand, et vous vous rappelez qu'il vous avait promis une surprise si vous les retrouviez. Vous décidez donc de faire un détour par sa boutique. Vous pouvez lire le soulagement dans son visage quand vous lui annoncer que vous l'avez vengé. Il vous donne une paire de bottes pour vous remercier. Lorsque vous les enfilez, vous vous sentez plus agile.",
+      "background": jpg.Taverne,
+      "title": "Vous vous approchez du groupe d’aventuriers.. Lorsque vous leur demander si ils ont des informations concernant les morts inexpliquées, un silence pesant se créé. Peu de  temps après, ils vous apprennent qu’ils ont perdu un camarade au combat en essayant d’éliminer la créature à l’origine de tout cela... Ils vous conseille d’abandonner votre quête, vous n’avez aucune chance contre ce monstre.. Il vous indique tout de même que la créature est située dans une grotte au nord du village.",
       "actions": [
         {
-          "description": "Super ! Continuer.",
-          "path": 9
+          "description": "Direction la grotte !",
+          "path": 16
+        },
+        {
+          "description": "Abandonner",
+          "lossCause": "Vous venez d'abandonner, à vous attendiez-vous au juste ?"
         }
       ]
-    }
+    },
+    {
+      "id": 16,
+      "background": jpg.Sortirvillage,
+      "title": "Vous sortez du village, déterminé à venger les villageois morts ces derniers jours. Vous marchez, de longues heures, au nord comme on vous l'a indiqué. La nuit ne va pas tarder à tomber, vous commencez à fatiguer...",
+      "actions": [
+        {
+          "description": "Etablir un campement pour passer la nuit.",
+          "lossCause": "Vous vous êtes endormi, extenué par la route. Seulement, dans la nuit, vous avez entendu un bruit, et en ouvrant les yeux, une silhouette imposante se tenait devant vous. Vous vous empressez de sortir votre arme, mais la créature vous assène un coup fatal. Quelle idée de s'endormir après s'être approcher de la menace..."
+        },
+        {
+          "description": "Continuer sa route.",
+          "path": 17
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "background": jpg.Sortirvillage,
+      "title": "Vous continuez votre route en direction du nord, et vous voyez au loin une cabane avec de la lumière. Les rumeurs disent justement qu'une sorcière vit au nord du village, elle connaît peut-être un elixir magique qui pourrait en venir à bout de la créature.",
+      "actions": [
+        {
+          "description": "Aller voir.",
+          "path": 18
+        },
+        {
+          "description": "Continuer sa route.",
+          "path": 21
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "background": jpg.Sortirvillage,
+      "title": "Vous arrivez devant la porte et toquez. Après un long moment d'attente, la porte s'ouvre doucement... Une dame agée avec une longue robe noire se tient devant vous, vous lui expliquez votre situation. Elle vous laisse entrer, autour de vous des fioles sont posées sur toutes les étagères. La sorcière vous montre une fiole d'un liquide rouge vif et vous indique que cette potion pourrait venir à bout de la créature, il suffirait de jeter la potion sur son visage, mais elle vous la cédera seulement pour 500 pièces d'or.",
+      "actions": [
+        {
+          "description": "Acheter la potion.",
+          "path": 25,
+          "tooltip": "Coûte 500 pièces d'or.",
+          "newState": {
+            "gold": -500
+          }
+        },
+        {
+          "description": "Tuer la sorcière et lui voler la potion.",
+          "type": "pow",
+          "tooltip": "Ce choix prend en compte votre puissance",
+          "path": 26,
+          "newState": {
+            "health": -75
+          }
+        },
+        {
+          "description": "Ne pas acheter la potion",
+          "path": 27,
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "background": jpg.auberge,
+      "title": "Après cette bonne nuit de repos, il est temps de continuer l'aventure ! En remerciant l'aubergiste, il vous dit qu'il a entendu un groupe d'aventuriers parler d'une grotte au nord du village abritant une créature qui serait à l'origine de tout cela..",
+      "actions": [
+        {
+          "description": "Y aller !",
+          "path": 16,
+        },
+      ]
+    },
+    {
+      "id": 20,
+      "background": jpg.auberge,
+      "title": "Vous interrogez l'homme, et il vous dit qu'il a entendu un groupe d'aventuriers parler de ça il y a quelque temps... Ils ont parlé d'une grotte au nord du village abritant une créature étant à l'origine de tout cela...",
+      "actions": [
+        {
+          "description": "Y aller !",
+          "path": 16,
+        },
+      ]
+    },
   ],
   "characters": [
     {
@@ -230,9 +331,9 @@ export default {
       "description": "“ L'atout principal du magicien réside dans sa puissance exceptionnelle. En revanche, ses autres statistiques sont assez faibles. ”",
       "stats": {
         "luck": 3,
-        "power": 16,
+        "power": 33,
         "agility": 4,
-        "health": 50
+        "health": 80
       }
     },
     {
@@ -252,7 +353,7 @@ export default {
         "luck": 9,
         "power": 2,
         "agility": 8,
-        "health": 80
+        "health": 100
       }
     }
   ]
