@@ -7,9 +7,33 @@
     <title>Hero</title>
   </head>
   <body>
+    
     <div id="root">
+      <transition name="black">
         <router-view />
+      </transition>
     </div>
+
+        <style>
+      .black-leave-active {
+        animation: toBlack 1.4s;
+      }
+      .black-enter-active {
+        animation: toBlack 1.4s 1.4s reverse;
+      }
+      @keyframes toBlack {
+        to {
+          pointer-events: none;
+          opacity: 0.3;
+          transform: scale(0);
+        }
+      }
+      body {
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+      }
+    </style> 
 
 
 
