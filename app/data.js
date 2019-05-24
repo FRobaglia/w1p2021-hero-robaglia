@@ -84,7 +84,7 @@ export default {
           "tooltip": "Ce choix prend en compte votre agilité",
           "newState": {
             "gold": 300,
-            "agilityTry": 3
+            "agilityTry": 5
           }
         },
         {

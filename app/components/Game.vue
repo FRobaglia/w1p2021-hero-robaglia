@@ -221,7 +221,7 @@ export default {
       }
 
       if (action.hallway) {
-        if (gameService.stats.agility > 6) {
+        if (gameService.stats.agility > 9) {
           this.$router.push({ params: { id: "28" } });
         } else {
           this.$router.push({ params: { id: "29" } });
