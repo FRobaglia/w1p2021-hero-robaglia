@@ -83,6 +83,7 @@ export default {
         this.$router.push({ params: { id: action.path } });
       }
 
+
       if (action.newState) {
         if (action.newState.luck) {
           gameService.stats.luck += action.newState.luck;
@@ -109,9 +110,7 @@ export default {
         }
         if (action.newState.agility) {
           gameService.stats.agility += action.newState.agility;
-          this.statChange.innerHTML += `<div class="speed">${
-            action.newState.agility
-          } Agilité </div>`;
+          this.statChange.innerHTML += `<div class="speed">${action.newState.agility} Agilité </div>`;
           if (action.newState.agility > 0) {
             document
               .querySelector(".stat-change .speed")
@@ -135,6 +134,10 @@ export default {
           }
         }
 
+        if (action.newState.merchant) {
+          gameService.merchant = true;
+        }
+
         if (action.newState.agilityTry) {
           if (action.newState.agilityTry > gameService.stats.agility) {
             this.$router.push({ path: "/lose" });
@@ -145,9 +148,6 @@ export default {
           }
           
           
-          if (action.newState.merchant) {
-            gameService.merchant = true;
-          }
         }
 
         if (action.newState.gold) {
@@ -163,6 +163,22 @@ export default {
             document
               .querySelector(".stat-change .gold")
               .insertAdjacentHTML("afterbegin", "+");
+          }
+        }
+      }
+
+      if (action.tp) {
+        gameService.tp = true;
+        gameService.save();
+      }
+
+      if (action.canTp) {
+        if (!gameService.tp) {
+          alert("Vous n'avez pas de pierre de téléportation, cette action est impossible.")
+        } else {
+          let playerSurvived = Math.random() + gameService.stats.luck / 100 >= 0.08;
+          if (playerSurvived) {
+            this.$router.push({ params: { id: "27" } });
           }
         }
       }
@@ -200,6 +216,16 @@ export default {
           this.statChange.innerHTML = `<div class="speed"> +5 Agilité </div>`;
         }
       }
+
+      if (action.hallway) {
+        if (gameService.stats.agility > 6) {
+          this.$router.push({ params: { id: "28" } });
+        } else {
+          this.$router.push({ params: { id: "29" } });
+        }
+      }
+
+      if (action.has)
 
       if (action.lossCause) {
         gameService.lossCause = action.lossCause;

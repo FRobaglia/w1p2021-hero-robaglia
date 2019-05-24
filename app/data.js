@@ -73,7 +73,7 @@ export default {
           "type": "pow",
           "tooltip": "Ce choix prend en compte votre puissance",
           "newState": {
-            "health": -90,
+            "health": -80,
             "gold": 300
           }
         },
@@ -270,7 +270,7 @@ export default {
         },
         {
           "description": "Continuer sa route.",
-          "path": 21
+          "path": 23
         }
       ]
     },
@@ -281,7 +281,7 @@ export default {
       "actions": [
         {
           "description": "Acheter la potion.",
-          "path": 25,
+          "path": 21,
           "tooltip": "Coûte 500 pièces d'or.",
           "newState": {
             "gold": -500
@@ -291,14 +291,14 @@ export default {
           "description": "Tuer la sorcière et lui voler la potion.",
           "type": "pow",
           "tooltip": "Ce choix prend en compte votre puissance",
-          "path": 26,
+          "path": 22,
           "newState": {
-            "health": -75
+            "health": -79
           }
         },
         {
-          "description": "Ne pas acheter la potion",
-          "path": 27,
+          "description": "Ne pas acheter la potion et continuer sa route.",
+          "path": 23,
         }
       ]
     },
@@ -324,15 +324,175 @@ export default {
         },
       ]
     },
+    {
+      "id": 21,
+      "background": jpg.auberge,
+      "title": "Vous achetez la potion à la sorcière pour 500 pièces d'or. Elle accepte de vous héberger pour la nuit pour vous montrer sa bonne foi. Vous vous réveillez à l'aube pour poursuivre votre quête",
+      "actions": [
+        {
+          "hasPotion": true,
+          "description": "C'est parti.",
+          "path": 23,
+        },
+      ]
+    },
+    {
+      "id": 22,
+      "background": jpg.auberge,
+      "title": "La sorcière, avant de mourir, vous lance une puissante potion explosive, qui vous explose au visage. Vous étiez à ça d'y laisser votre peau.",
+      "actions": [
+        {
+          "hasPotion": true,
+          "description": "Continuer.",
+          "path": 23,
+        },
+      ]
+    },
+    {
+      "id": 23,
+      "background": jpg.auberge,
+      "title": "Alors que vous continuez votre route vers le nord, vous rencontrez un marchand ambulant. Il vous propose une pierre de téléportation. Elle permet de se téléporter ou vous voulez sur une distance de 100 mètres. Elle est à vous pour 100 pièces d'or.",
+      "actions": [
+        {
+          "description": "Acheter la pierre et continuer son chemin.",
+          "path": 24,
+          "tp": true,
+          "newState": {
+            "gold": -100,
+          }
+        },
+        {
+          "description": "Continuer son chemin",
+          "path": 25,
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "background": jpg.auberge,
+      "title": "Le marchand vous remercie et vous préviens d'une chose : lors de l'utilisation d'une pierre de téléportation, il y a une petite chance, inférieure à 10%, que son utilisateur meurt instantanément.. Mais si vous êtes chanceux, ça devrait bien se passer, ne vous inquiétez pas!",
+      "actions": [
+        {
+          "description": "Super... Continuer son chemin.",
+          "path": 25,
+        },
+      ]
+    },
+    {
+      "id": 25,
+      "background": jpg.auberge,
+      "title": " Vous continuez de marcher au nord, et au loin, vous apercevez enfin l'entrée d'une grotte... En vous approchant, vous remarquez qu'elle s'enfonce de la terre, et le chemin est très sinueux : un simple pas de travers et vous ferez une chute mortelle.",
+      "actions": [
+        {
+          "description": "Descendre prudemment.",
+          "path": 26,
+          "type": "agi",
+          "tooltip": "Ce choix prends en compte votre agilité",
+          "newState": {
+            "agilityTry": 4
+          }
+        },
+        {
+          "description": "Se téléporter en bas à l'aide de la pierre.",
+          "canTp": true,
+          "type": "lck",
+          "tooltip": "Ce choix prends en compte votre chance"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "background": jpg.auberge,
+      "title": "Grâce à votre agilité, vous parvenez à descendre la grotte sans trop d'encombres. Vous voici maintenant dans un long couloir sombre, qui semble mener à une grande salle souterraine. On entend au loin les ronflements d'une créature imposante. Il semble que vous n'avez pas le choix, il faut y aller, espérons que la bête ne se réveille pas. Essayez d'être discret.",
+      "actions": [
+        {
+          "description": "Affronter son destin.",
+          "hallway": true,
+          "tooltip": "Ce choix prends en compte votre agilité.",
+          "type": "agi",
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "background": jpg.auberge,
+      "title": "La téléportation à réussi ! Vous voilà maintenant dans un long couloir sombre, qui semble mener à une grande salle souterraine. On entend au loin les ronflements d'une créature imposante. Il semble que vous n'avez pas le choix, il faut y aller, espérons que la bête ne se réveille pas. Essayez d'être discret.",
+      "actions": [
+        {
+          "description": "Affronter son destin.",
+          "hallway": true,
+          "tooltip": "Ce choix prends en compte votre agilité.",
+          "type": "agi",
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "background": jpg.auberge,
+      "title": "Vous avez réussi ! Vous voilà maintenant à deux pas de la créature, qui dort profondément.",
+      "actions": [
+        {
+          "description": "Tuer la créature.",
+          "tooltip": "Boum !"
+        },
+        {
+          "description": "La réveiller, et lui proposer de s'allier à elle.",
+          "tooltip": ". . .",
+          "lossCause": "... La créature ne semblait pas ouverte au dialogue.",
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "background": jpg.auberge,
+      "title": "Zut ! A cause de votre manque d'agilité, vous avez reveillé la créature en vous approchant.. Plus le choix, il faut combattre !",
+      "actions": [
+        {
+          "description": "Combattre.",
+          "type": "pow",
+          "path": 30,
+          "tooltip": "Combat final. Ce choix prends en compte votre puissance",
+          "newState": {
+            "health": -67
+          }
+        },
+        {
+          "potion": true,
+          "description": "Lancer la potion de la sorcière.",
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "background": jpg.auberge,
+      "title": "Vous avez triomphé ! ",
+      "actions": [
+        {
+          "description": "Youpi!",
+          "tooltip": "Ecran de fin.",
+        },
+      ]
+    },
+    {
+      "id": 31,
+      "background": jpg.auberge,
+      "title": "La créature, à peine touchée par la fiole, hurle un cri de désespoir ! Ca a fonctionné ! Vous avez sauvé le village ! ",
+      "actions": [
+        {
+          "description": "Youpi!",
+          "tooltip": "Ecran de fin.",
+        },
+      ]
+    },
   ],
   "characters": [
     {
       "class": "Mage",
       "description": "“ L'atout principal du magicien réside dans sa puissance exceptionnelle. En revanche, ses autres statistiques sont assez faibles. ”",
       "stats": {
-        "luck": 3,
-        "power": 33,
-        "agility": 4,
+        "luck": 5,
+        "power": 27,
+        "agility": 5,
         "health": 80
       }
     },
@@ -342,7 +502,7 @@ export default {
       "stats": {
         "luck": 4,
         "power": 9,
-        "agility": 1,
+        "agility": 2,
         "health": 150
       }
     },
@@ -350,9 +510,9 @@ export default {
       "class": "Voleur",
       "description": "“ Le voleur évite les combats quand il le peut : il préfère ruser et se faufiler pour arriver à ses fins... ”",
       "stats": {
-        "luck": 9,
-        "power": 2,
-        "agility": 8,
+        "luck": 11,
+        "power": 6,
+        "agility": 13,
         "health": 100
       }
     }

@@ -3,7 +3,7 @@
     <strong class="lost"> Vous avez perdu. </strong>
     <h1> {{ lossCause }} </h1> 
     <br />
-    <router-link v-on:click.native="gameService.resetData()" class="button" to="/">Rejouer</router-link>
+    <router-link v-on:click.native="gameService.resetData()" class="button" to="./">Rejouer</router-link>
   </div>
 </template>
 
