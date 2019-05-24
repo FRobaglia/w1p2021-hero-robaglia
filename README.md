@@ -35,3 +35,6 @@ URL du site : http://herobaglia.netlify.com
 | Multimédia | L'expérience présente une vidéo ou plus | Oui |
 | Multimédia | L'expérience présente un audio ou plus | Oui |
 | Multimédia | L'utilisateur a la possibilité de couper le son à tout moment | Oui |
+
+
+![alt text](https://raw.githubusercontent.com/FRobaglia/projectname/branch/path/to/img.png)
