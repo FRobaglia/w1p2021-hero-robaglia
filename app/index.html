@@ -9,19 +9,19 @@
   <body>
     
     <div id="root">
-      <transition name="black">
+      <transition name="scale">
         <router-view />
       </transition>
     </div>
 
         <style>
-      .black-leave-active {
-        animation: toBlack 1.4s;
+      .scale-leave-active {
+        animation: scale 1.4s;
       }
-      .black-enter-active {
-        animation: toBlack 1.4s 1.4s reverse;
+      .scale-enter-active {
+        animation: scale 1.4s 1.4s reverse;
       }
-      @keyframes toBlack {
+      @keyframes scale {
         to {
           pointer-events: none;
           opacity: 0.3;
