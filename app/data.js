@@ -261,7 +261,7 @@ export default {
     },
     {
       "id": 17,
-      "background": jpg.Sortirvillage,
+      "background": jpg.road,
       "title": "Vous continuez votre route en direction du nord, et vous voyez au loin une cabane avec de la lumière. Les rumeurs disent justement qu'une sorcière vit au nord du village, elle connaît peut-être un elixir magique qui pourrait en venir à bout de la créature.",
       "actions": [
         {
@@ -276,7 +276,7 @@ export default {
     },
     {
       "id": 18,
-      "background": jpg.Sortirvillage,
+      "background": jpg.road,
       "title": "Vous arrivez devant la porte et toquez. Après un long moment d'attente, la porte s'ouvre doucement... Une dame agée avec une longue robe noire se tient devant vous, vous lui expliquez votre situation. Elle vous laisse entrer, autour de vous des fioles sont posées sur toutes les étagères. La sorcière vous montre une fiole d'un liquide rouge vif et vous indique que cette potion pourrait venir à bout de la créature, il suffirait de jeter la potion sur son visage, mais elle vous la cédera seulement pour 500 pièces d'or.",
       "actions": [
         {
@@ -326,7 +326,7 @@ export default {
     },
     {
       "id": 21,
-      "background": jpg.auberge,
+      "background": jpg.road,
       "title": "Vous achetez la potion à la sorcière pour 500 pièces d'or. Elle accepte de vous héberger pour la nuit pour vous montrer sa bonne foi. Vous vous réveillez à l'aube pour poursuivre votre quête",
       "actions": [
         {
@@ -338,7 +338,7 @@ export default {
     },
     {
       "id": 22,
-      "background": jpg.auberge,
+      "background": jpg.road,
       "title": "La sorcière, avant de mourir, vous lance une puissante potion explosive, qui vous explose au visage. Vous étiez à ça d'y laisser votre peau.",
       "actions": [
         {
@@ -350,7 +350,7 @@ export default {
     },
     {
       "id": 23,
-      "background": jpg.auberge,
+      "background": jpg.road,
       "title": "Alors que vous continuez votre route vers le nord, vous rencontrez un marchand ambulant. Il vous propose une pierre de téléportation. Elle permet de se téléporter ou vous voulez sur une distance de 100 mètres. Elle est à vous pour 100 pièces d'or.",
       "actions": [
         {
@@ -369,7 +369,7 @@ export default {
     },
     {
       "id": 24,
-      "background": jpg.auberge,
+      "background": jpg.road,
       "title": "Le marchand vous remercie et vous préviens d'une chose : lors de l'utilisation d'une pierre de téléportation, il y a une petite chance, environ 20%, que son utilisateur meurt instantanément.. Mais si vous êtes chanceux, ça devrait bien se passer, ne vous inquiétez pas!",
       "actions": [
         {
@@ -380,7 +380,7 @@ export default {
     },
     {
       "id": 25,
-      "background": jpg.auberge,
+      "background": jpg.cave,
       "title": " Vous continuez de marcher au nord, et au loin, vous apercevez enfin l'entrée d'une grotte... En vous approchant, vous remarquez qu'elle s'enfonce de la terre, et le chemin est très sinueux : un simple pas de travers et vous ferez une chute mortelle.",
       "actions": [
         {
@@ -402,7 +402,7 @@ export default {
     },
     {
       "id": 26,
-      "background": jpg.auberge,
+      "background": jpg.cave,
       "title": "Grâce à votre agilité, vous parvenez à descendre la grotte sans trop d'encombres. Vous voici maintenant dans un long couloir sombre, qui semble mener à une grande salle souterraine. On entend au loin les ronflements d'une créature imposante. Il semble que vous n'avez pas le choix, il faut y aller, espérons que la bête ne se réveille pas. Essayez d'être discret.",
       "actions": [
         {
@@ -419,7 +419,7 @@ export default {
     },
     {
       "id": 27,
-      "background": jpg.auberge,
+      "background": jpg.cave,
       "title": "La téléportation à réussi ! Vous voilà maintenant dans un long couloir sombre, qui semble mener à une grande salle souterraine. On entend au loin les ronflements d'une créature imposante. Il semble que vous n'avez pas le choix, il faut y aller, espérons que la bête ne se réveille pas. Essayez d'être discret.",
       "actions": [
         {
@@ -436,7 +436,7 @@ export default {
     },
     {
       "id": 28,
-      "background": jpg.auberge,
+      "background": jpg.cave,
       "title": "Vous avez réussi ! Vous voilà maintenant à deux pas de la créature, qui dort profondément.",
       "actions": [
         {
@@ -453,7 +453,7 @@ export default {
     },
     {
       "id": 29,
-      "background": jpg.auberge,
+      "background": jpg.cave,
       "title": "Zut ! A cause de votre manque d'agilité, vous avez reveillé la créature en vous approchant.. Plus le choix, il faut combattre !",
       "actions": [
         {
@@ -469,7 +469,7 @@ export default {
     },
     {
       "id": 30,
-      "background": jpg.auberge,
+      "background": jpg.cave,
       "title": "Vous avez triomphé ! ",
       "actions": [
         {
@@ -481,7 +481,7 @@ export default {
     },
     {
       "id": 31,
-      "background": jpg.auberge,
+      "background": jpg.cave,
       "title": "La créature, à peine touchée par la fiole, hurle un cri de désespoir ! Ca a fonctionné ! Vous avez sauvé le village ! ",
       "actions": [
         {
